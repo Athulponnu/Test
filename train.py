@@ -15,4 +15,4 @@ model.fit(X, y)
 # Save model
 joblib.dump(model, "model.pkl")
 
-print("Model trained and saveddssasasgit as model.pkl")
+print("Model trained and savsssssssseddssasasgit as model.pkl")
