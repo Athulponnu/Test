@@ -1,12 +1,26 @@
 name: Train Model
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   train:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - run: pip install pandas scikit-learn joblib
-    - run: python train.py
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: pip install pandas scikit-learn joblib
+
+    - name: Run training
+      run: python train.py
+
+    # 🔥 THIS PART SAVES ARTIFACT
+    - name: Upload model artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: trained-model
+        path: model.pkl
