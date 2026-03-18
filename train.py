@@ -12,4 +12,4 @@ model.fit(X, y)
 
 joblib.dump(model, "model.pkl")
 
-print("Training done done")
+print("Trainissssng done done")
